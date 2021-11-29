@@ -1,0 +1,7 @@
+{
+  "name": "eco-Books",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
