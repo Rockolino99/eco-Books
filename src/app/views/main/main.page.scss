@@ -1,18 +1,43 @@
-ion-content, .container {
+ion-content, .containerCol {
     height: 100%;
+    width: 100%;
 }
 
-.container {
+.containerCol {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    width: 100%;
 }
 
-ion-content .container img {
+ion-content .containerCol img {
     width: 60%;
 }
 
-ion-content .container h1 {
+ion-content .containerCol h1 {
     text-align: center;
+    margin: 50px;
+}
+
+.containerRow {
+    width: 100%;
+    display: flex;
+    justify-content: space-around !important;
+}
+
+button {
+    border-radius: 20px;
+    padding: 15px 20px 15px 20px;
+    width: 40%;
+}
+
+button.pink {
+    color: white;
+    background-color: rgb(255, 1, 100);
+}
+
+button.white {
+    color: rgb(255, 1, 100);
+    background-color:  white;
 }
