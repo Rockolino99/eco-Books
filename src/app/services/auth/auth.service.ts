@@ -35,6 +35,8 @@ export class AuthService {
       let text = 'Algo salió mal, intente de nuevo'
       if(error == 'auth/email-already-in-use')
         text = 'El correo ya está registrado'
+      else if(error == 'auth/invalid-email')
+        text = 'El correo es inválido'
         setTimeout(() => {
           Swal.fire({
             icon: 'error',
@@ -54,7 +56,7 @@ export class AuthService {
       //this.cleanForms()
       //Swal.fire('Custom Login')
       //this.router.navigate(['home'])
-      this.router.navigate(['profile'])
+      this.router.navigate(['master'])
     })
     .catch( e => {
       let error = e.code

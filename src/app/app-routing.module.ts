@@ -22,6 +22,18 @@ const routes: Routes = [
   {
     path: 'profile',
     loadChildren: () => import('./views/session/profile/profile.module').then( m => m.ProfilePageModule)
+  },
+  {
+    path: 'books',
+    loadChildren: () => import('./views/inside/books/books.module').then( m => m.BooksPageModule)
+  },
+  {
+    path: 'master',
+    loadChildren: () => import('./views/inside/master/master.module').then( m => m.MasterPageModule)
+  },
+  {
+    path: 'upload',
+    loadChildren: () => import('./views/inside/upload/upload.module').then( m => m.UploadPageModule)
   }
 ];
 @NgModule({
