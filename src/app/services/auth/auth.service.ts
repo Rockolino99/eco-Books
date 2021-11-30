@@ -26,8 +26,9 @@ export class AuthService {
           displayName: form.nombre + " " + form.apellidos,
         })
         this.router.navigate(['login'])
+        return
       })
-      console.log(user)
+      //console.log(user)
     })
     .catch(e => {
       let error = e.code
@@ -46,15 +47,14 @@ export class AuthService {
     })
   }
 
-  /*
-  customLogin(form) {
-    this.auth.signInWithEmailAndPassword(form.correo, form.password)
+  
+  customLogin(correo, password) {
+    this.auth.signInWithEmailAndPassword(correo, password)
     .then( res => {
-      //console.log(res)
-      this.cleanForms()
+      //this.cleanForms()
       //Swal.fire('Custom Login')
-      this.router.navigate(['home'])
-      
+      //this.router.navigate(['home'])
+      this.router.navigate(['profile'])
     })
     .catch( e => {
       let error = e.code
@@ -79,9 +79,9 @@ export class AuthService {
 
   logout() {
     this.auth.signOut();
-    this.router.navigate(['home'])
-    this.isAdmin = false
-    this.uid = null
-    $('#eventBtn').click()
-  }*/
+    this.router.navigate(['main'])
+    //this.isAdmin = false
+    //this.uid = null
+    //$('#eventBtn').click()
+  }
 }

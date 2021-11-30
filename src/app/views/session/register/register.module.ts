@@ -7,7 +7,6 @@ import { IonicModule } from '@ionic/angular';
 import { RegisterPageRoutingModule } from './register-routing.module';
 
 import { RegisterPage } from './register.page';
-import { Toast } from '@ionic-native/toast';
 
 @NgModule({
   imports: [
@@ -15,9 +14,7 @@ import { Toast } from '@ionic-native/toast';
     FormsModule,
     IonicModule,
     RegisterPageRoutingModule,
-    FormsModule,
-    ReactiveFormsModule,
-    
+    ReactiveFormsModule
   ],
   declarations: [RegisterPage]
   
