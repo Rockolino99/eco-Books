@@ -2,6 +2,9 @@ import { Injectable } from '@angular/core';
 import * as firebase from 'firebase/compat/app';
 import { FirebaseService } from '../firebase/firebase.service';
 import { AngularFireAuth } from '@angular/fire/compat/auth';
+import * as auth from 'firebase/compat/auth';
+import { Router } from '@angular/router';
+import Swal from 'sweetalert2'
 
 @Injectable({
   providedIn: 'root'
@@ -10,37 +13,75 @@ export class AuthService {
 
   constructor(
     private firebaseService: FirebaseService,
-    public afAuth: AngularFireAuth
+    public auth: AngularFireAuth,
+    public router: Router,
   ) { }
 
-  /*doRegister(value) {
-    return new Promise<any>((resolve, reject) => {
-      firebase.default.auth().createUserWithEmailAndPassword(value.email, value.password)
-      .then(
-        res => resolve(res),
-        err => reject(err)
-      )
+  register(form) {
+
+    this.auth.createUserWithEmailAndPassword(form.correo, form.password)
+    .then(user => {
+      this.auth.currentUser.then(srs => {
+        srs.updateProfile({
+          displayName: form.nombre + " " + form.apellidos,
+        })
+        this.router.navigate(['login'])
+      })
+      console.log(user)
+    })
+    .catch(e => {
+      let error = e.code
+      let text = 'Algo salió mal, intente de nuevo'
+      if(error == 'auth/email-already-in-use')
+        text = 'El correo ya está registrado'
+        setTimeout(() => {
+          Swal.fire({
+            icon: 'error',
+            text: text,
+            showConfirmButton: false,
+            timer: 1500
+          })
+        }, 1); 
+        return
     })
   }
 
-  doLogin(value){
-    return new Promise<any>((resolve, reject) => {
-      firebase.default.auth().signInWithEmailAndPassword(value.email, value.password)
-      .then(
-        res => resolve(res),
-        err => reject(err))
+  /*
+  customLogin(form) {
+    this.auth.signInWithEmailAndPassword(form.correo, form.password)
+    .then( res => {
+      //console.log(res)
+      this.cleanForms()
+      //Swal.fire('Custom Login')
+      this.router.navigate(['home'])
+      
+    })
+    .catch( e => {
+      let error = e.code
+      let text = 'Algo salió mal, intente de nuevo'
+      if(error == 'auth/user-not-found')
+        text = 'El usuario no existe'
+      else if(error == 'auth/wrong-password')
+        text = 'La contraseña es incorrecta'
+      
+      setTimeout(() => {
+        Swal.fire({
+          icon: 'error',
+          text: text,
+          showConfirmButton: false,
+          timer: 1500
+        })
+      }, 1); 
+      return
+      
     })
   }
 
-  doLogout(){
-    return new Promise((resolve, reject) => {
-      this.afAuth.auth.signOut()
-      .then(() => {
-        this.firebaseService.unsubscribeOnLogOut();
-        resolve();
-      }).catch((error) => {
-        reject();
-      });
-    })
+  logout() {
+    this.auth.signOut();
+    this.router.navigate(['home'])
+    this.isAdmin = false
+    this.uid = null
+    $('#eventBtn').click()
   }*/
 }

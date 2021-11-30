@@ -1,6 +1,7 @@
 ion-content, .containerCol {
     height: 100%;
     width: 100%;
+    background-color: white !important;
 }
 
 .containerCol {
@@ -13,11 +14,13 @@ ion-content, .containerCol {
 
 ion-content .containerCol img {
     width: 60%;
+    
 }
 
 ion-content .containerCol h1 {
     text-align: center;
     margin: 50px;
+    
 }
 
 .containerRow {
@@ -41,3 +44,17 @@ button.white {
     color: rgb(255, 1, 100);
     background-color:  white;
 }
+
+small {
+    color: red;
+}
+
+ion-label {
+    color: black !important;
+}
+
+ion-input {
+    /*background-color: white !important;
+    color: white !important;*/
+}
+
