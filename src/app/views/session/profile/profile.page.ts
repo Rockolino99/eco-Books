@@ -8,13 +8,15 @@ import { AuthService } from 'src/app/services/auth/auth.service';
 })
 export class ProfilePage implements OnInit {
 
+  username: string
+
   constructor(
     public authService: AuthService
   ) { }
 
   ngOnInit( ) {
     this.authService.auth.currentUser.then(user => {
-      user.getIdToken
+      this.username = user.displayName
       //alert("logueado")
     })
     .catch( err => {

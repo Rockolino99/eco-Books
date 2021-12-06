@@ -20,7 +20,12 @@ export class LoginPage implements OnInit {
     public authService: AuthService
   ) { }
 
-  ngOnInit() { }
+  ngOnInit() {
+    this.newLoginForm.setValue({
+      correo: "juanito@gmail.com",
+      password: "juanito"
+    })
+  }
 
   validateLogin(form) {
     this.triedLogin = true;

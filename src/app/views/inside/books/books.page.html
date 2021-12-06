@@ -5,5 +5,24 @@
 </ion-header>
 
 <ion-content>
-
+  <div *ngIf="books.length==0 ">
+    <br>
+    <h1>No hay libros disponibles D':</h1>
+</div>
+<ng-container class="books_container">
+    <div class="media" *ngFor="let book of books ">
+        <div class="media-figure ">
+            <!-- <img [src]="dog.data.imagen" width="300px "> -->
+        </div>
+        <div class="media-body ">
+            <h3>Nombre: {{book.data.nombre}}</h3>
+            <h3>Estado: {{book.data.estado}}</h3>
+            <h3>Descripcion: {{book.data.descripcion}}</h3>
+            <div class="btn-group">
+                <!-- <button class="btn-success btn " (click)="editDog(dog.id) ">Editar</button>
+                <button class="btn-danger btn " (click)="deleteDog(dog.id) ">Eliminar</button> -->
+            </div>
+        </div>
+    </div>
+</ng-container>
 </ion-content>

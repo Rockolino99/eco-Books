@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FirebaseService } from '../../../services/firebase/firebase.service';
 
 @Component({
   selector: 'app-books',
@@ -7,9 +8,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class BooksPage implements OnInit {
 
-  constructor() { }
+  public books:any = [];
+
+  constructor(private firestoreService: FirebaseService) { }
 
   ngOnInit() {
+    this.firestoreService.getBooks().subscribe( booksSnapshot => {
+      this.books = [];
+      booksSnapshot.forEach( bookData => {
+        this.books.push({
+          id: bookData.payload.doc.id,
+          data: bookData.payload.doc.data()
+        })
+      })
+    })
   }
 
 }

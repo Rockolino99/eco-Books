@@ -5,5 +5,36 @@
 </ion-header>
 
 <ion-content>
+  <form (ngSubmit)="newBook(newBookForm.value)" [formGroup]="newBookForm">
 
+    <div class="form-group">
+        <label for="nombre">Nombre:</label>
+        <input type="text" id="nombre" class="form-control" formControlName="nombre">
+    </div>
+
+    <div class="form-group">
+        <label for="estado">Estado:</label>
+        <select name="estado" id="estado" class="form-control" formControlName="estado">
+          <option value="Nuevo">Nuevo</option>
+          <option value="Usado (como nuevo)">Usado (como nuevo)</option>
+          <option value="Usado (buen estado)">Usado (buen estado)</option>
+          <option value="Usado (aceptable)">Usado (aceptable)</option>
+        </select>
+        <!-- <input type="text" id="estado" class="form-control" formControlName="estado"> -->
+    </div>
+    <div class="form-group">
+      <label for="descripcion">Descripcion:</label>
+      <textarea type="text" id="descripcion" class="form-control" formControlName="descripcion" placeholder="Descripción"></textarea>
+    </div>
+
+    <div class="form-group">
+        <input type="submit" class="btn btn-primary mt-4" value="Agregar" [disabled]="!newBookForm.valid">
+        <!-- <input type="reset" class="btn btn-secondary mt-4 float-right" value="Cancelar"> -->
+    </div>
+
+    <!-- <ion-tab-button (click)="validateNewBook()" [disabled]="!newBookForm.valid">
+      <ion-icon name="book"></ion-icon>
+      <ion-label>Photo xsxd</ion-label>
+    </ion-tab-button> -->
+  </form>
 </ion-content>
