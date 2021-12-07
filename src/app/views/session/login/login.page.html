@@ -25,6 +25,7 @@
         <small *ngIf="newLoginForm.get('password').errors?.required && triedLogin">Ingrese una contraseña</small>
         <small *ngIf="newLoginForm.get('password').errors?.minlength && triedLogin">Minimo 6 digitos</small>
       </ion-item>
+      
       <ion-row>
         <ion-col>
           <ion-button type="submit" color="danger">Iniciar Sesión</ion-button>

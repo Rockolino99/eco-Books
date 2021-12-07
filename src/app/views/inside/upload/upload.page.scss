@@ -5,6 +5,17 @@
 
 ion-label{
     color: rgba(0, 0, 0, 0.527) !important;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+ion-select, ion-select-option, ion-textarea{
+    color: black !important;
+    width: 100%;
+
 }
 
 ion-input{
@@ -14,6 +25,8 @@ ion-input{
     margin-top: 10px;
     padding-left: 10px !important;
 }
+
+
 
 /******/
 .contentUpload{
@@ -25,7 +38,7 @@ ion-input{
     width: 100%;
 }
 
-.containerCol {
+.containerCol{
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -40,10 +53,4 @@ ion-input{
 .contentUpload .containerCol h1 {
     text-align: center;
     margin: 50px;
-}
-
-
-ion-row{
-    text-align: center;
-    margin-top: 20px;
 }

@@ -1,3 +1,5 @@
+
+
 <ion-header>
   <ion-toolbar>
     <div class="textUpload">
@@ -7,50 +9,35 @@
 </ion-header>
 
 <ion-content>
-  <div class="contentUpload">
+  <div class="contentUpload" style="padding: 50px;">
     <form (ngSubmit)="newBook(newBookForm.value)" [formGroup]="newBookForm">
-      
-      <div class="form-group">
-        <ion-label position="floating">Nombre</ion-label>
-        <!-- <label for="nombre">Nombre:</label> -->
+
+      <ion-item lines="none">
+        <ion-label position="fixed">Nombre</ion-label>
         <ion-input type="text" id="nombre" formControlName="nombre" placeholder="Nombre del libro" required></ion-input>
-        <!-- <input type="text" id="nombre" class="form-control" formControlName="nombre"> -->
-      </div>
-      <br>
-      <div class="form-group">
-       
-          <ion-label position="floating">Estado</ion-label>
-          <ion-select value="Nuevo" interface="estado" placeholder="Seleccione"> 
-            <ion-select-option value="Nuevo">Nuevo</ion-select-option>
-            <ion-select-option value="Usado (como nuevo)">Usado (como nuevo</ion-select-option>
-            <ion-select-option value="Usado (buen estado)">Usado (buen estado)</ion-select-option>
-            <ion-select-option value="Usado (aceptable)">Usado (aceptable)</ion-select-option>
-          </ion-select>
-        
-        <!-- <label for="estado">Estado:</label> -->
-        <!-- <select name="estado" id="estado" class="form-control" formControlName="estado">
-          <option value="Nuevo">Nuevo</option>
-          <option value="Usado (como nuevo)">Usado (como nuevo)</option>
-          <option value="Usado (buen estado)">Usado (buen estado)</option>
-          <option value="Usado (aceptable)">Usado (aceptable)</option>
-        </select> -->
-        <!-- <input type="text" id="estado" class="form-control" formControlName="estado"> -->
-      </div>
-      <div class="form-group">
-        <ion-label position="floating">Descripcion</ion-label>
-        <ion-textarea id="descripcion" class="form-control" formControlName="descripcion"
-          placeholder="Descripción"></ion-textarea>
-      </div>
+      </ion-item><br>
 
-      <div class="form-group">
-        <input type="submit" class="btn btn-primary mt-4" value="Agregar" [disabled]="!newBookForm.valid">
-        <!-- <input type="reset" class="btn btn-secondary mt-4 float-right" value="Cancelar"> -->
-      </div>
+      <ion-item lines="none">
+        <ion-label for="estado">Estado</ion-label>
+        <ion-select interface="custom-options" class="custom-options" name="estado" id="estado" formControlName="estado">
+          <ion-select-option value="nuevo">Nuevo</ion-select-option>
+          <ion-select-option value="Usado (como nuevo)">Usado (como nuevo)</ion-select-option>
+          <ion-select-option value="Usado (buen estado)">Usado (buen estado)</ion-select-option>
+          <ion-select-option value="Usado (aceptable)">Usado (aceptable)</ion-select-option>
+        </ion-select>
+      </ion-item><br>
 
-      <!-- <ion-tab-button (click)="validateNewBook()" [disabled]="!newBookForm.valid">
-        <ion-icon name="book"></ion-icon>
-        <ion-label>Photo xsxd</ion-label>
-      </ion-tab-button> -->
+      <ion-item lines="none">
+        <ion-label position="stacked">Descripción</ion-label>
+        <ion-textarea id="descripcion" formControlName="descripcion" placeholder="Ingresa descripción del libro"></ion-textarea>
+      </ion-item><br>
+
+      <ion-row>
+        <ion-col>
+          <ion-button type="submit" color="danger" [disabled]="!newBookForm.valid">Publicar</ion-button>
+        </ion-col>
+      </ion-row>
+
     </form>
   </div>
 </ion-content>
