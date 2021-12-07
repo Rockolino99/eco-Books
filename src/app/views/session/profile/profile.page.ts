@@ -17,7 +17,6 @@ export class ProfilePage implements OnInit {
   ngOnInit( ) {
     this.authService.auth.currentUser.then(user => {
       this.username = user.displayName
-      //alert("logueado")
     })
     .catch( err => {
       this.authService.logout()

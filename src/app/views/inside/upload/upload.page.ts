@@ -13,6 +13,10 @@ export class UploadPage implements OnInit {
     nombre: new FormControl('', Validators.required),
     estado: new FormControl('', Validators.required),
     descripcion: new FormControl('', Validators.required),
+    idioma: new FormControl('', Validators.required),
+    nivel: new FormControl('', Validators.required),
+    editorial: new FormControl('', Validators.required),
+    precio: new FormControl('', Validators.compose([Validators.required, Validators.min(1)])),
   });
 
   constructor(
@@ -21,13 +25,11 @@ export class UploadPage implements OnInit {
     this.newBookForm.setValue({
       nombre: '',
       estado: '',
-      descripcion: ''
-      /*
-      idioma
-      nivel
-      editorial
-      precio
-      */
+      descripcion: '',
+      idioma: '',
+      editorial: '',
+      precio: '',
+      nivel: ''
     });
   }
 
@@ -35,12 +37,24 @@ export class UploadPage implements OnInit {
     
   }
 
-  public newBook(form: { nombre: string; estado: string; descripcion: string;}) {
+  public newBook(form: { 
+                  nombre: string;
+                  estado: string;
+                  descripcion: string;
+                  idioma: string;
+                  nivel: string;
+                  editorial: string;
+                  precio: number;
+                }) {
 
     let data: any = {
       nombre: form.nombre,
       estado: form.estado,
-      descripcion: form.descripcion
+      descripcion: form.descripcion,
+      idioma: form.idioma,
+      nivel: form.nivel,
+      editorial: form.editorial,
+      precio: form.precio
     }
 
     this.firesbaseService.createBook(data).then(  () => {
