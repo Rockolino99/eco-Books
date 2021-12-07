@@ -34,7 +34,12 @@ const routes: Routes = [
   {
     path: 'upload',
     loadChildren: () => import('./views/inside/upload/upload.module').then( m => m.UploadPageModule)
-  }
+  },
+  /*{
+    path: 'categories',
+    loadChildren: () => import('./views/inside/categories/categories.module').then( m => m.CategoriesPageModule)
+  }*/
+
 ];
 @NgModule({
   imports: [
