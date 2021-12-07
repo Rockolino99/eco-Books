@@ -9,12 +9,21 @@
     <br>
     <h1>No hay libros disponibles D':</h1>
 </div>
-<ng-container class="books_container">
-    <div class="media" *ngFor="let book of books ">
-        <div class="media-figure ">
-            <!-- <img [src]="dog.data.imagen" width="300px "> -->
-        </div>
-        <div class="media-body ">
+
+        <ion-card class="speaker-card" *ngFor="let book of books">
+
+          <ion-card-header>
+              {{book.data.nombre}}
+          </ion-card-header>
+
+          <ion-card-content>
+                <h3>Nivel: {{book.data.nivel}}</h3>
+                <h3>Precio: ${{book.data.precio}}</h3>
+          </ion-card-content>
+
+        </ion-card>
+      <!-- 
+            {{book.id}}
             <h3>Nombre: {{book.data.nombre}}</h3>
             <h3>Estado: {{book.data.estado}}</h3>
             <h3>Descripcion: {{book.data.descripcion}}</h3>
@@ -22,11 +31,5 @@
             <h3>Nivel: {{book.data.nivel}}</h3>
             <h3>Editorial: {{book.data.editorial}}</h3>
             <h3>Precio: ${{book.data.precio}}</h3>
-            <div class="btn-group">
-                <!-- <button class="btn-success btn " (click)="editDog(dog.id) ">Editar</button>
-                <button class="btn-danger btn " (click)="deleteDog(dog.id) ">Eliminar</button> -->
-            </div>
-        </div>
-    </div>
-</ng-container>
+       -->
 </ion-content>
