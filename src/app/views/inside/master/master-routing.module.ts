@@ -10,7 +10,16 @@ const routes: Routes = [
     children: [
       {
         path: "books",
-        loadChildren: () => import('../books/books.module').then( m => m.BooksPageModule)
+        children: [
+          {
+            path: '',
+            loadChildren: () => import('../books/books.module').then( m => m.BooksPageModule)
+          },
+          {
+            path: ':id',
+            loadChildren: () => import('../book/book.module').then( m => m.BookPageModule)
+          }
+        ]
       },
       {
         path: "profile",

@@ -11,15 +11,17 @@
 </div>
 
         <ion-card class="speaker-card" *ngFor="let book of books">
-
-          <ion-card-header>
+          <div routerLink="/master/MasterPage/books/{{book.id}}">
+            <ion-card-header>
               {{book.data.nombre}}
           </ion-card-header>
 
-          <ion-card-content>
+          <ion-card-content >
                 <h3>Nivel: {{book.data.nivel}}</h3>
                 <h3>Precio: ${{book.data.precio}}</h3>
           </ion-card-content>
+          </div>
+          
 
         </ion-card>
       <!-- 
