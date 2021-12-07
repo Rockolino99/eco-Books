@@ -1,39 +1,22 @@
-
-
 <ion-header>
   <ion-toolbar>
     <div class="textUpload">
-      <ion-title>Vender Libro</ion-title>
+      <ion-text>Indica los datos completos del libro</ion-text>
     </div>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-  <div class="contentUpload" style="padding: 50px;">
+  <div class="contentUpload">
     <form (ngSubmit)="newBook(newBookForm.value)" [formGroup]="newBookForm">
 
       <ion-item lines="none">
-        <ion-label position="fixed">Nombre</ion-label>
+        <ion-label position="stacked">Nombre del libro</ion-label>
         <ion-input type="text" id="nombre" formControlName="nombre" placeholder="Nombre del libro" required></ion-input>
-      </ion-item><br>
+      </ion-item>
 
       <ion-item lines="none">
-        <ion-label for="estado">Estado</ion-label>
-        <ion-select interface="custom-options" class="custom-options" name="estado" id="estado" formControlName="estado">
-          <ion-select-option value="Nuevo">Nuevo</ion-select-option>
-          <ion-select-option value="Usado (como nuevo)">Usado (como nuevo)</ion-select-option>
-          <ion-select-option value="Usado (buen estado)">Usado (buen estado)</ion-select-option>
-          <ion-select-option value="Usado (aceptable)">Usado (aceptable)</ion-select-option>
-        </ion-select>
-      </ion-item><br>
-
-      <ion-item lines="none">
-        <ion-label position="stacked">Descripción</ion-label>
-        <ion-textarea id="descripcion" formControlName="descripcion" placeholder="Ingresa descripción del libro"></ion-textarea>
-      </ion-item><br>
-
-      <ion-item lines="none">
-        <ion-label for="idioma">Idioma</ion-label>
+        <ion-label for="idioma" position="floating">Idioma</ion-label>
         <ion-select interface="custom-options" class="custom-options" name="idioma" id="idioma" formControlName="idioma">
           <ion-select-option value="Inglés">Inglés</ion-select-option>
           <ion-select-option value="Francés">Francés</ion-select-option>
@@ -42,35 +25,62 @@
           <ion-select-option value="Italiano">Italiano</ion-select-option>
           <ion-select-option value="Español">Español</ion-select-option>
         </ion-select>
-      </ion-item><br>
-
-      <ion-item lines="none">
-        <ion-label for="nivel">Nivel</ion-label>
-        <ion-select interface="custom-options" class="custom-options" name="nivel" id="nivel" formControlName="nivel">
-          <ion-select-option value="A1">A1</ion-select-option>
-          <ion-select-option value="A2">A2</ion-select-option>
-          <ion-select-option value="B1">B1</ion-select-option>
-          <ion-select-option value="B2">B2</ion-select-option>
-          <ion-select-option value="C1">C1</ion-select-option>
-          <ion-select-option value="C2">C2</ion-select-option>
-        </ion-select>
-      </ion-item><br>
-
-      <ion-item lines="none">
-        <ion-label position="fixed">Editorial</ion-label>
-        <ion-input type="text" id="editorial" formControlName="editorial" placeholder="Editorial del libro" required></ion-input>
-      </ion-item><br>
-
-      <ion-item lines="none">
-        <ion-label position="fixed">Precio</ion-label>
-        <ion-input type="number" id="precio" formControlName="precio" placeholder="Precio del libro" required></ion-input>
-      </ion-item><br>
+      </ion-item>
 
       <ion-row>
-        <ion-col>
-          <ion-button type="submit" color="danger" [disabled]="!newBookForm.valid">Publicar</ion-button>
+        <ion-col size="7"> 
+          <ion-item lines="none">
+            <ion-label position="stacked">Editorial</ion-label>
+            <ion-input type="text" id="editorial" formControlName="editorial" placeholder="Editorial del libro" required></ion-input>
+          </ion-item>
+        </ion-col>
+
+        <ion-col> 
+          <ion-item lines="none">
+            <ion-label position="stacked">Precio</ion-label>
+            <ion-input type="number" id="precio" formControlName="precio" placeholder="Precio" required></ion-input>
+          </ion-item>
         </ion-col>
       </ion-row>
+
+
+      <ion-row>
+        <ion-col> 
+          <ion-item lines="none">
+            <ion-label for="estado" position="floating">Estado</ion-label>
+            <ion-select interface="custom-options" class="custom-options" name="estado" id="estado" formControlName="estado">
+              <ion-select-option value="Nuevo">Nuevo</ion-select-option>
+              <ion-select-option value="Usado (como nuevo)">Usado (como nuevo)</ion-select-option>
+              <ion-select-option value="Usado (buen estado)">Usado (buen estado)</ion-select-option>
+              <ion-select-option value="Usado (aceptable)">Usado (aceptable)</ion-select-option>
+            </ion-select>
+          </ion-item>
+        </ion-col>
+
+        <ion-col> 
+          <ion-item lines="none">
+            <ion-label for="nivel" position="floating">Nivel</ion-label>
+            <ion-select interface="custom-options" class="custom-options" name="nivel" id="nivel" formControlName="nivel" aria-placeholder="A1">
+              <ion-select-option value="A1">A1</ion-select-option>
+              <ion-select-option value="A2">A2</ion-select-option>
+              <ion-select-option value="B1">B1</ion-select-option>
+              <ion-select-option value="B2">B2</ion-select-option>
+              <ion-select-option value="C1">C1</ion-select-option>
+              <ion-select-option value="C2">C2</ion-select-option>
+            </ion-select>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+
+      <ion-item lines="none">
+        <ion-label position="stacked">Descripción</ion-label>
+        <ion-textarea id="descripcion" formControlName="descripcion" placeholder="Descripción del libro"></ion-textarea>
+      </ion-item>
+
+      
+      <center>
+        <br><ion-button type="submit" color="danger" [disabled]="!newBookForm.valid">Publicar</ion-button>
+      </center>
 
     </form>
   </div>
