@@ -1,0 +1,49 @@
+.textUpload{
+    padding: 45px;
+    text-align: center;
+}
+
+ion-label{
+    color: rgba(0, 0, 0, 0.527) !important;
+}
+
+ion-input{
+    background-color: rgba(192, 192, 192, 0.507);
+    border-radius: 10px;
+    color: black;
+    margin-top: 10px;
+    padding-left: 10px !important;
+}
+
+/******/
+.contentUpload{
+    background-color: white !important;
+}
+
+.contentUpload, .containerCol {
+    height: 100%;
+    width: 100%;
+}
+
+.containerCol {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.contentUpload .containerCol img {
+    width: 60%;
+}
+
+.contentUpload .containerCol h1 {
+    text-align: center;
+    margin: 50px;
+}
+
+
+ion-row{
+    text-align: center;
+    margin-top: 20px;
+}
