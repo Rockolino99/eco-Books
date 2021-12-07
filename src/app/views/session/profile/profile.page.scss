@@ -1,0 +1,32 @@
+ion-title{
+    padding-top: 45px;
+    padding-bottom: 45px;
+    text-align: left;
+}
+/******/
+.contentP{
+    background-color: white !important;
+}
+
+.contentP, .containerCol {
+    height: 100%;
+    width: 100%;
+}
+
+.containerCol {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.contentP .containerCol img {
+    width: 60%;
+}
+
+.contentP .containerCol h1 {
+    text-align: center;
+    margin: 50px;
+}
+
