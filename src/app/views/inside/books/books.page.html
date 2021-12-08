@@ -35,9 +35,10 @@
     <h1>No hay libros disponibles D':</h1>
   </div>
 
+  <h4><strong>Nuestros libros</strong></h4>
   <ion-row>
-    <ion-col *ngFor="let book of books">
-      <ion-card class="speaker-card" *ngIf="book.idioma==idioma">
+    <ion-col size="6" class="speaker-card" *ngFor="let book of books"> 
+      <ion-card>
         <div routerLink="/master/MasterPage/books/{{book.id}}">
           <ion-card-header>
             {{book.data.nombre}}
@@ -49,6 +50,9 @@
           </ion-card-content>
         </div>
       </ion-card>
+      <center>
+        <div routerLink="/master/MasterPage/books/{{book.id}}"><ion-button type="submit" color="danger">Información</ion-button></div>
+      </center>
     </ion-col>
     
   </ion-row>
