@@ -38,6 +38,10 @@ const routes: Routes = [
         loadChildren: () => import('../upload/upload.module').then( m => m.UploadPageModule)
       },
       {
+        path: "mybooks/:uid",
+        loadChildren: () => import('../mybooks/mybooks.module').then( m => m.MybooksPageModule)
+      },
+      {
         path: '',
         redirectTo: '/master/MasterPage/books',
         pathMatch: 'full'

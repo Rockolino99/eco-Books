@@ -26,6 +26,12 @@ export class FirebaseService {
   public getBookByID(documentID: string) {
     return this.firestore.collection('books').doc(documentID).snapshotChanges();
   }
+
+  public getBooksByUID(uid: string) {
+    return this.firestore.collection('books', res => {
+      return res.where('uid','==',uid)
+    }).snapshotChanges();
+  }
 /*
   public getDogs() {
     return this.firestore.collection('dogs').snapshotChanges();

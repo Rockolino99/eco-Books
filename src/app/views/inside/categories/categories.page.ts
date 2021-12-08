@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FirebaseService } from '../../../services/firebase/firebase.service';
+import { AuthService } from '../../../services/auth/auth.service';
 
 @Component({
   selector: 'app-categories',
@@ -7,10 +8,16 @@ import { FirebaseService } from '../../../services/firebase/firebase.service';
   styleUrls: ['./categories.page.scss'],
 })
 export class CategoriesPage implements OnInit {
+
   
-  constructor(private firestoreService: FirebaseService) { }
+  
+  constructor(
+    ) { }
 
   ngOnInit() {
     
+    
   }
+
+
 }

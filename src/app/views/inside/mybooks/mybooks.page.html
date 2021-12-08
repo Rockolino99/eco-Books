@@ -1,0 +1,33 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Mis libros</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="pageWhite">
+  <div *ngIf="books.length==0 ">
+    <br>
+    <h1><strong>No tienes ningun libro</strong></h1>
+  </div>
+
+  <ion-row>
+    <ion-col size="6" class="speaker-card" *ngFor="let book of books"> 
+      <ion-card>
+        <div routerLink="/master/MasterPage/books/{{book.id}}">
+          <ion-card-header>
+            {{book.data.nombre}}
+          </ion-card-header>
+
+          <ion-card-content>
+            <h3>Nivel: {{book.data.nivel}}</h3>
+            <h3>Precio: ${{book.data.precio}}</h3>
+          </ion-card-content>
+        </div>
+      </ion-card>
+      <center>
+        <div routerLink="/master/MasterPage/books/{{book.id}}"><ion-button type="submit" color="danger">Información</ion-button></div>
+      </center>
+    </ion-col>
+    
+  </ion-row>
+</ion-content>

@@ -9,7 +9,8 @@ import { AuthService } from 'src/app/services/auth/auth.service';
 export class ProfilePage implements OnInit {
 
   username: string
-
+  public uid: string
+  
   constructor(
     public authService: AuthService
   ) { }
@@ -17,6 +18,7 @@ export class ProfilePage implements OnInit {
   ngOnInit( ) {
     this.authService.auth.currentUser.then(user => {
       this.username = user.displayName
+      this.uid = user.uid
     })
     .catch( err => {
       this.authService.logout()

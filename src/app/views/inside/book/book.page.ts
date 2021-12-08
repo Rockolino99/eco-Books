@@ -18,6 +18,7 @@ export class BookPage implements OnInit {
   ) { }
 
   ngOnInit() {
+    
     const bookID = this.route.snapshot.paramMap.get('id');
     
     this.firebase.getBookByID(bookID).subscribe( bookSnapshot => {
