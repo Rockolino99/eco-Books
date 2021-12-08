@@ -9,91 +9,64 @@
 </ion-header>
 
 <ion-content class="pageWhite">
-  <form [formGroup]="newRegisterForm" (ngSubmit)="validateRegister(form)">
+  <form [formGroup]="newRegisterForm" (ngSubmit)="validateRegister(this)">
     <ion-grid>
       <ion-row color="primary" justify-content-center>
         <ion-col align-self-center size-md="6" size-lg="5" size-xs="12">
           <div padding>
             <ion-item lines="none">
-              <ion-label position="stacked">Correo electrónico:</ion-label>
-              <ion-input formControlName="correo" type="email" placeholder="mariaperez@gmail.com" required></ion-input>
-              <small *ngIf="newRegisterForm.get('correo').errors?.required && triedRegister">Ingrese un correo
-                electrónico</small>
-              <small *ngIf="newRegisterForm.get('correo').errors?.email && triedRegister">Ingrese un correo electrónico
-                válido</small>
-            </ion-item><br>
-            <ion-item lines="none">
               <ion-label position="stacked">Nombre:</ion-label>
               <ion-input formControlName="nombre" type="text" placeholder="Maria" required></ion-input>
-              <small *ngIf="newRegisterForm.get('nombre').errors && triedRegister">Ingrese un nombre</small>
+              <small *ngIf="newRegisterForm.get('nombre').errors && triedRegister">Ingrese un
+                nombre</small>
             </ion-item><br>
+
             <ion-item lines="none">
               <ion-label position="stacked">Apellidos:</ion-label>
               <ion-input formControlName="apellidos" type="text" placeholder="Perez" required></ion-input>
-              <small *ngIf="newRegisterForm.get('apellidos').errors && triedRegister">Ingrese sus apellidos</small>
+              <small *ngIf="newRegisterForm.get('apellidos').errors && triedRegister">Ingrese sus
+                apellidos</small>
             </ion-item><br>
+
+            <ion-item lines="none">
+              <ion-label position="stacked">Celular:</ion-label>
+              <ion-input formControlName="celular" type="text" placeholder="0123456789" required>
+              </ion-input>
+              <small *ngIf="newRegisterForm.get('celular').errors?.required && triedRegister">Ingrese su
+                celular</small>
+              <small *ngIf="newRegisterForm.get('celular').errors?.minlength && triedRegister">Mínimo 10
+                digitos</small>
+              <small *ngIf="newRegisterForm.get('celular').errors?.maxlength && triedRegister">Máximo 10
+                digitos</small>
+              <small *ngIf="newRegisterForm.get('celular').errors?.pattern && triedRegister">Sólo se
+                permiten números</small>
+            </ion-item><br>
+
+            <ion-item lines="none">
+              <ion-label position="stacked">Correo electrónico:</ion-label>
+              <ion-input formControlName="correo" type="email" placeholder="mariaperez@gmail.com" required></ion-input>
+              <small *ngIf="newRegisterForm.get('correo').errors?.required && triedRegister">Ingrese un
+                correo electrónico</small>
+              <small *ngIf="newRegisterForm.get('correo').errors?.email && triedRegister">Ingrese un
+                correo electrónico válido</small>
+            </ion-item><br>
+
             <ion-item lines="none">
               <ion-label position="stacked">Contraseña:</ion-label>
-              <ion-input formControlName="password" type="password" placeholder="******" required></ion-input>
+              <ion-input formControlName="password" type="password" placeholder="******" required>
+              </ion-input>
               <small *ngIf="newRegisterForm.get('password').errors?.required && triedRegister">Ingrese una
                 contraseña</small>
-              <small *ngIf="newRegisterForm.get('password').errors?.minlength && triedRegister">Minimo 6 digitos</small>
+              <small *ngIf="newRegisterForm.get('password').errors?.minlength && triedRegister">Minimo 6
+                digitos</small>
             </ion-item>
           </div><br>
-          <div padding>
-            <center>
-              <ion-button type="submit" color="danger" (click)="validateRegister(newRegisterForm.value)">Registrarse
-              </ion-button>
-            </center>
+          <div align="center">
+            <ion-button type="submit" color="danger" (click)="validateRegister(newRegisterForm.value)">
+              Registrarse</ion-button>
           </div>
         </ion-col>
       </ion-row>
     </ion-grid>
   </form>
-
-  <!-- <form (ngSubmit)="validateRegister(newRegisterForm.value)" [formGroup]="newRegisterForm">
-    <div class="form-panel two">
-      <div class="form-header">
-        <h1>Registro</h1>
-      </div>
-      <div class="form-content">
-        <div class="form-group">
-          <label for="name">Nombre</label>
-          <input type="text" id="name" name="name" formControlName="nombre" required="required">
-          <small *ngIf="newRegisterForm.get('nombre').errors && triedRegister">Ingrese un nombre</small>
-        </div>
-        <div class="form-group">
-          <label for="emailR">Correo Electrónico</label>
-          <input type="email" id="emailR" name="emailR" formControlName="correo" required="required" />
-          <small *ngIf="newRegisterForm.get('correo').errors?.required && triedRegister">Ingrese un correo
-            electrónico</small>
-          <small *ngIf="newRegisterForm.get('correo').errors?.email && triedRegister">Ingrese un correo electrónico
-            válido</small>
-        </div>
-        <div class="row cent">
-          <div class="col-md-12 col-lg-6" style="width: 100% !important; padding-left: 0;">
-            <div class="form-group" style="width: 100%;">
-              <label for="password">Contraseña</label>
-              <input type="password" id="password" formControlName="password" name="password" autocomplete="false">
-              <small *ngIf="newRegisterForm.get('password').errors?.required && triedRegister">Ingrese una contraseña de mínimo 6 digitos</small>
-              <small *ngIf="newRegisterForm.get('password').errors?.minlength && triedRegister">Ingrese un correo electrónico</small>
-            </div>
-          </div>
-          <div class="col-md-12 col-lg-6 m-res" style="width: 100% !important; padding-right: 0;">
-            <div class="form-group">
-              <label for="cpassword">Repetir contraseña</label>
-              <input type="password" id="cpassword" formControlName="password2" name="cpassword" autocomplete="false">
-              <small *ngIf="newRegisterForm.get('password2').errors?.required && triedRegister">Repita su contraseña</small>
-              <small *ngIf="newRegisterForm.get('password2').errors?.minlength && triedRegister">Ingrese una contraseña de mínimo 6 digitos</small>
-              <small *ngIf="newRegisterForm.get('password2').value != newRegisterForm.get('password').value && !newRegisterForm.get('password2').errors && triedRegister">Las contraseñas no coinciden</small>
-            </div>
-          </div>
-        </div>
-        <br>
-        <div class="form-group">
-          <input type="button" class="btn" value="Registrarse" (click)="validateRegister(newRegisterForm.value)" />
-        </div>
-      </div>
-    </div>
-  </form> -->
 </ion-content>

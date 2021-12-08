@@ -67,7 +67,6 @@ export class UploadPage implements OnInit {
       precio: form.precio,
       uid: this.uid
     }
-    console.log(this.uid);
     
 
     this.firesbaseService.createBook(data).then(  () => {
