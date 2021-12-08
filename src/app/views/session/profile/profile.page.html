@@ -19,25 +19,26 @@
 </ion-content>
 -->
 
-<ion-content>
-  <div class="contentP">
-    <ion-list>
-      <ion-item lines="none">
-        <ion-icon name="home" slot="start"></ion-icon>
-        <ion-label><a routerLink="/master/MasterPage/books" routerLinkActive="router-link-active">Inicio</a></ion-label>
-      </ion-item>
-      <ion-item lines="none">
-        <ion-icon name="bookmark" slot="start"></ion-icon>
-        <ion-label><a routerLink="/master/MasterPage/categories" routerLinkActive="router-link-active">Categorias</a></ion-label>
-      </ion-item>
-      <ion-item lines="none">
-        <ion-icon name="storefront" slot="start"></ion-icon>
-        <ion-label><a routerLink="/master/MasterPage/upload" routerLinkActive="router-link-active">Vender</a></ion-label>
-      </ion-item>
-      <ion-item lines="none">
-        <ion-icon name="exit" slot="start"></ion-icon>
-        <ion-label><ion-text (click)="logout()">Cerrar Sesión</ion-text></ion-label>
-      </ion-item>
-    </ion-list>
-  </div>
+<ion-content class="pageWhite">
+  <ion-list>
+    <ion-item lines="none">
+      <ion-icon name="home" slot="start"></ion-icon>
+      <ion-label><a routerLink="/master/MasterPage/books" routerLinkActive="router-link-active">Inicio</a></ion-label>
+    </ion-item>
+    <ion-item lines="none">
+      <ion-icon name="bookmark" slot="start"></ion-icon>
+      <ion-label><a routerLink="/master/MasterPage/categories" routerLinkActive="router-link-active">Categorias</a>
+      </ion-label>
+    </ion-item>
+    <ion-item lines="none">
+      <ion-icon name="storefront" slot="start"></ion-icon>
+      <ion-label><a routerLink="/master/MasterPage/upload" routerLinkActive="router-link-active">Vender</a></ion-label>
+    </ion-item>
+    <ion-item lines="none">
+      <ion-icon name="exit" slot="start"></ion-icon>
+      <ion-label>
+        <ion-text (click)="logout()">Cerrar Sesión</ion-text>
+      </ion-label>
+    </ion-item>
+  </ion-list>
 </ion-content>

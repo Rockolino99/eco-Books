@@ -4,27 +4,52 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
+<ion-content class="pageWhite">
+  <center>
+    <ion-slides>
+      <ion-slide>
+        <div class="slide">
+          <img src="../../../../assets/imagenBooks/slide1.jpg" />
+          <h6>¡Dale otra oportunidad a tus libros!</h6>
+        </div>
+      </ion-slide>
+
+      <ion-slide>
+        <div class="slide">
+          <img src="../../../../assets/imagenBooks/slide2.jpg" />
+          <h6>Encuentra de todo tipo de libro</h6>
+        </div>
+      </ion-slide>
+
+      <ion-slide>
+        <div class="slide">
+          <img src="../../../../assets/imagenBooks/slide3.jpg" />
+          <h6>¡Los precios altos han terminado!</h6>
+        </div>
+      </ion-slide>
+    </ion-slides>
+  </center>
+
   <div *ngIf="books.length==0 ">
     <br>
     <h1>No hay libros disponibles D':</h1>
-</div>
+  </div>
 
-        <ion-card class="speaker-card" *ngFor="let book of books">
-          <div routerLink="/master/MasterPage/books/{{book.id}}">
-            <ion-card-header>
-              {{book.data.nombre}}
-          </ion-card-header>
+  <ion-card class="speaker-card" *ngFor="let book of books">
+    <div routerLink="/master/MasterPage/books/{{book.id}}">
+      <ion-card-header>
+        {{book.data.nombre}}
+      </ion-card-header>
 
-          <ion-card-content >
-                <h3>Nivel: {{book.data.nivel}}</h3>
-                <h3>Precio: ${{book.data.precio}}</h3>
-          </ion-card-content>
-          </div>
-          
+      <ion-card-content>
+        <h3>Nivel: {{book.data.nivel}}</h3>
+        <h3>Precio: ${{book.data.precio}}</h3>
+      </ion-card-content>
+    </div>
 
-        </ion-card>
-      <!-- 
+
+  </ion-card>
+  <!-- 
             {{book.id}}
             <h3>Nombre: {{book.data.nombre}}</h3>
             <h3>Estado: {{book.data.estado}}</h3>
