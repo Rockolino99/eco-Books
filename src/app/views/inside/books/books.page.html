@@ -35,20 +35,24 @@
     <h1>No hay libros disponibles D':</h1>
   </div>
 
-  <ion-card class="speaker-card" *ngFor="let book of books">
-    <div routerLink="/master/MasterPage/books/{{book.id}}">
-      <ion-card-header>
-        {{book.data.nombre}}
-      </ion-card-header>
+  <ion-row>
+    <ion-col *ngFor="let book of books">
+      <ion-card class="speaker-card" *ngIf="book.idioma==idioma">
+        <div routerLink="/master/MasterPage/books/{{book.id}}">
+          <ion-card-header>
+            {{book.data.nombre}}
+          </ion-card-header>
 
-      <ion-card-content>
-        <h3>Nivel: {{book.data.nivel}}</h3>
-        <h3>Precio: ${{book.data.precio}}</h3>
-      </ion-card-content>
-    </div>
+          <ion-card-content>
+            <h3>Nivel: {{book.data.nivel}}</h3>
+            <h3>Precio: ${{book.data.precio}}</h3>
+          </ion-card-content>
+        </div>
+      </ion-card>
+    </ion-col>
+    
+  </ion-row>
 
-
-  </ion-card>
   <!-- 
             {{book.id}}
             <h3>Nombre: {{book.data.nombre}}</h3>

@@ -19,12 +19,11 @@ export class BookPage implements OnInit {
 
   ngOnInit() {
     const bookID = this.route.snapshot.paramMap.get('id');
-    /*this.firebase.getBook(bookID).subscribe( bookSnapshot => {
-      bookSnapshot.forEach(book => {
-        
-      });
-      
-    })*/
+    const bookIdioma = this.route.snapshot.paramMap.get('idioma');
+
+    console.log(bookIdioma);
+    console.log(bookID);
+    
     this.firebase.getBook(bookID).subscribe( bookSnapshot => {
       this.book = bookSnapshot.payload.data()
       
@@ -32,6 +31,12 @@ export class BookPage implements OnInit {
         this.vendedor = userSnapshot[0].payload.doc.data();
       })
     })
+
+    this.firebase.getBook(bookIdioma).subscribe(bookSnapshot => {
+      this.book = bookSnapshot.payload.data()
+    })
+
+
   }
 
 }

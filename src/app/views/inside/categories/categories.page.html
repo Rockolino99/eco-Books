@@ -1,7 +1,94 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>categories</ion-title>
+    <div class="textCategorias">
+      <ion-title>Indica la categoria</ion-title>
+    </div>
   </ion-toolbar>
 </ion-header>
 
+<ion-content class="pageWhite">
+  <ion-row>
+    <ion-col>
+      <ion-card class="speaker-card" >
+        <div routerLink="/master/MasterPage/books/cat/Español">
+          <ion-card-header>
+           Español
+          </ion-card-header>
+          <ion-card-content>
+            <img src="../../../../assets/idiomas/esp.jpg" alt="" size="25px">
+          </ion-card-content>
+        </div>
+      </ion-card>
+    </ion-col>
+  
+    <ion-col>
+      <ion-card class="speaker-card" >
+        <div routerLink="/master/MasterPage/books/cat/Ingles">
+          <ion-card-header>
+            Inglés
+          </ion-card-header>
+          <ion-card-content>
+            <img src="../../../../assets/idiomas/eua.jpg" alt="" size="25px">
+          </ion-card-content>
+        </div>
+      </ion-card>
+    </ion-col>
+  </ion-row>
+
+  <ion-row>
+    <ion-col>
+      <ion-card class="speaker-card" >
+        <div routerLink="/master/MasterPage/books/">
+          <ion-card-header>
+            Francés
+          </ion-card-header>
+          <ion-card-content>
+            <img src="../../../../assets/idiomas/francia.jpg" alt="" size="25px">
+          </ion-card-content>
+        </div>
+      </ion-card>
+    </ion-col>
+  
+    <ion-col>
+      <ion-card class="speaker-card" >
+        <div routerLink="/master/MasterPage/books/{{book.id}}">
+          <ion-card-header>
+            Alemán
+          </ion-card-header>
+          <ion-card-content>
+            <img src="../../../../assets/idiomas/aleman.jpg" alt="" size="25px">
+          </ion-card-content>
+        </div>
+      </ion-card>
+    </ion-col>
+  </ion-row>
+
+  <ion-row>
+    <ion-col>
+      <ion-card class="speaker-card" >
+        <div routerLink="/master/MasterPage/books/{{book.id}}">
+          <ion-card-header>
+            Japonés
+          </ion-card-header>
+          <ion-card-content>
+            <img src="../../../../assets/idiomas/japon.jpg" alt="" size="25px">
+          </ion-card-content>
+        </div>
+      </ion-card>
+    </ion-col>
+  
+    <ion-col>
+      <ion-card class="speaker-card">
+        <div routerLink="/master/MasterPage/books/{{book.id}}">
+          <ion-card-header>
+            Italiano
+          </ion-card-header>
+          <ion-card-content>
+            <img src="../../../../assets/idiomas/italy.jpg" alt="" size="25px">
+          </ion-card-content>
+        </div>
+      </ion-card>
+    </ion-col>
+  </ion-row>
+</ion-content>
 

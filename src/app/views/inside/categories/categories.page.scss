@@ -1,0 +1,65 @@
+.textCategorias{
+    padding: 45px;
+    text-align: center;
+}
+
+ion-label{
+    color: rgba(0, 0, 0, 0.527) !important;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+ion-select, ion-select-option, ion-textarea{
+    color: black !important;
+    width: 100%;
+
+}
+
+ion-input,ion-textarea{
+    background-color: rgba(192, 192, 192, 0.507);
+    border-radius: 10px;
+    color: black;
+    margin-top: 10px;
+    padding-left: 10px !important;
+    padding-right: 5px !important;
+}
+
+ion-select{
+    border-bottom: 1px solid rgba(192, 192, 192, 0.507);
+}
+
+/******/
+.pageWhite form{
+    margin: 10px;
+}
+
+.pageWhite, .containerCol {
+    height: 100%;
+    width: 100%;
+}
+
+.containerCol {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.pageWhite .containerCol img {
+    width: 60%;
+}
+
+.pageWhite .containerCol h1 {
+    text-align: center;
+    margin: 50px;
+}
+
+
+ion-row{
+    text-align: center;
+    margin-top: 20px;
+}
