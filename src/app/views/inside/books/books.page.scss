@@ -25,7 +25,7 @@ h4, h1{
 @import url('https://fonts.googleapis.com/css?family=Catamaran:400,800');
 .error-container {
   text-align: center;
-  font-size: 180px;
+  font-size: 110px;
   font-family: 'Catamaran', sans-serif;
   font-weight: 800;
   margin: 20px 15px;
@@ -50,10 +50,9 @@ h4, h1{
   animation: colordancing2 4s infinite;
 }
 .error-container > span:nth-of-type(2) {
-  width: 120px;
-  height: 120px;
-  border-radius: 999px;
+ 
   color:#65b1a2;
+  animation: colordancing2 4s infinite;
 }
 .error-container > span:nth-of-type(4) {
     color: #d64c92;
