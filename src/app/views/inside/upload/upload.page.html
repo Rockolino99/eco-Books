@@ -78,7 +78,7 @@
 
       
       <center>
-        <br><ion-button type="submit" color="danger" [disabled]="!newBookForm.valid">Publicar</ion-button>
+        <br><ion-button (click)="envioalerta()" type="submit" color="danger" [disabled]="!newBookForm.valid">Publicar</ion-button>
       </center>
 
     </form>

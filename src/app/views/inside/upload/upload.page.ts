@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { AuthService } from 'src/app/services/auth/auth.service';
 import { FirebaseService } from 'src/app/services/firebase/firebase.service';
+import { AlertController } from '@ionic/angular';
+
 
 @Component({
   selector: 'app-upload',
@@ -24,7 +26,8 @@ export class UploadPage implements OnInit {
 
   constructor(
     private firesbaseService: FirebaseService,
-    private auth: AuthService
+    private auth: AuthService,
+    public alerta: AlertController
   ) {
     this.newBookForm.setValue({
       nombre: '',
@@ -71,11 +74,20 @@ export class UploadPage implements OnInit {
 
     this.firesbaseService.createBook(data).then(  () => {
       this.newBookForm.reset();
-      
     }),
     error => {
       console.log(error)
     }
+  }
+
+  async envioalerta() {
+    const alert = await this.alerta.create({
+      cssClass: 'my-custom-class',
+      header: 'Éxito',
+      message: '¡Libro publicado exitosamente!',
+      buttons: ['OK'],
+    });
+    await alert.present();
   }
 
 }
