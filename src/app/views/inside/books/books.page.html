@@ -1,6 +1,6 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>books</ion-title>
+    <ion-title>{{titulo}}</ion-title>
   </ion-toolbar>
 </ion-header>
 
@@ -30,12 +30,13 @@
     </ion-slides>
   </div>
 
+  <h4><strong>Nuestros libros</strong></h4>
+
   <div *ngIf="books.length==0 ">
     <br>
-    <h1>No hay libros disponibles D':</h1>
+    <h1><strong>No hay libros disponibles :'C</strong></h1>
   </div>
 
-  <h4><strong>Nuestros libros</strong></h4>
   <ion-row>
     <ion-col size="6" class="speaker-card" *ngFor="let book of books"> 
       <ion-card>

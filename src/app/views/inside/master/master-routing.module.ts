@@ -20,7 +20,7 @@ const routes: Routes = [
             loadChildren: () => import('../book/book.module').then( m => m.BookPageModule)
           },
           {
-            path: ':cat/Español',
+            path: 'cat/:idioma',
             loadChildren: () => import('../books/books.module').then( m => m.BooksPageModule)
           }
         ]

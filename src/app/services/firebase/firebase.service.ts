@@ -13,12 +13,17 @@ export class FirebaseService {
     return this.firestore.collection('books').snapshotChanges();
   }
 
+  public getBooksByLanguaje(idioma: string) {
+    return this.firestore.collection('books', res => {
+      return res.where('idioma', '==', idioma)
+    }).snapshotChanges();
+  }
   
   public createBook(data: {nombre: string, estado: string, descripcion: string}) {
     return this.firestore.collection('books').add(data)
   }
 
-  public getBook(documentID: string) {
+  public getBookByID(documentID: string) {
     return this.firestore.collection('books').doc(documentID).snapshotChanges();
   }
 /*
