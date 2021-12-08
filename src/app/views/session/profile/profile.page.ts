@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from 'src/app/services/auth/auth.service';
+import { AlertController } from '@ionic/angular';
 
 @Component({
   selector: 'app-profile',
@@ -12,7 +13,7 @@ export class ProfilePage implements OnInit {
   public uid: string
   
   constructor(
-    public authService: AuthService
+    public authService: AuthService, public alerta: AlertController
   ) { }
 
   ngOnInit( ) {
@@ -25,7 +26,23 @@ export class ProfilePage implements OnInit {
     })
   }
 
-  logout() {
-    this.authService.logout()
-  }
+  async logout() {
+    const alert = await this.alerta.create({
+      cssClass: 'my-custom-class',
+      header: 'Cerrar sesión',
+      message: '¿Seguro que quieres cerrar sesión?',
+      buttons: [
+      {
+        text:'Cancelar'
+      },
+      {
+        text:'Cerrar sesión',
+        handler: data =>{
+          this.authService.logout();
+        }
+      }
+    ],
+    });
+    await alert.present();
+}
 }
