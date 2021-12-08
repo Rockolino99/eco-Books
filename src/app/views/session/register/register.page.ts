@@ -1,8 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { AuthService } from 'src/app/services/auth/auth.service';
-import { Toast, ToastOptions} from '@ionic-native/toast/ngx'
-import { NavController, ToastController } from '@ionic/angular';
+import { FirebaseService } from '../../../services/firebase/firebase.service'
 
 @Component({
   selector: 'app-register',
@@ -19,21 +18,13 @@ export class RegisterPage implements OnInit {
     nombre: new FormControl('', Validators.required),
     apellidos: new FormControl('',Validators.required),
     password: new FormControl('',Validators.compose([Validators.required, Validators.minLength(6)])),
-    correo: new FormControl('',Validators.compose([Validators.required, Validators.email]))
+    correo: new FormControl('',Validators.compose([Validators.required, Validators.email])),
+    celular: new FormControl('', Validators.compose([Validators.required, Validators.pattern(/\-?\d*\.?\d{1,2}/), Validators.minLength(10), Validators.maxLength(10)]))
   });
-
-  /*public newRegisterForm = new FormGroup({
-    nombre: new FormControl('', Validators.required),
-    password: new FormControl('',Validators.compose([Validators.required, Validators.minLength(6)])),
-    password2: new FormControl('',Validators.compose([Validators.required, Validators.minLength(6)])),
-    correo: new FormControl('',Validators.compose([Validators.required, Validators.email]))
-  });*/
-  
-  toastOptions: ToastOptions
 
   constructor(
     public authService: AuthService,
-    private toast: ToastController
+    public firebase: FirebaseService
   ) {}
 
   ngOnInit() {
@@ -49,7 +40,9 @@ export class RegisterPage implements OnInit {
   }
 
   register(form) {
-    this.authService.register(form.value)/*.subscribe((res) => {
+    this.authService.register(form.value)
+    //this.firebase.createUser(form.value)
+    /*.subscribe((res) => {
       this.router.navigateByUrl('home');
     });*/
   }

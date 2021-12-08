@@ -8,6 +8,7 @@ export class FirebaseService {
 
   constructor(private firestore: AngularFirestore ) { }
 
+  //Books
   public getBooks() {
     return this.firestore.collection('books').snapshotChanges();
   }
@@ -33,4 +34,15 @@ export class FirebaseService {
     return this.firestore.collection('dogs').doc(documentID).delete();
   }
   */
+
+  //Users
+  public createUser(data: {uid: string, nombre: string, celular: Number, email: string}) {
+    return this.firestore.collection('users').add(data)
+  }
+
+  public getUserData(uid) {
+    return this.firestore.collection('users', data => {
+      return data.where('uid', '==', uid)
+    }).snapshotChanges()
+  }
 }

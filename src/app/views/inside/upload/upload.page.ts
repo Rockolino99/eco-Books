@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { AuthService } from 'src/app/services/auth/auth.service';
 import { FirebaseService } from 'src/app/services/firebase/firebase.service';
 
 @Component({
@@ -19,8 +20,11 @@ export class UploadPage implements OnInit {
     precio: new FormControl('', Validators.compose([Validators.required, Validators.min(1)])),
   });
 
+  public uid: string
+
   constructor(
-    private firesbaseService: FirebaseService
+    private firesbaseService: FirebaseService,
+    private auth: AuthService
   ) {
     this.newBookForm.setValue({
       nombre: '',
@@ -31,6 +35,12 @@ export class UploadPage implements OnInit {
       precio: '',
       nivel: ''
     });
+    setTimeout(() => {
+      this.auth.auth.currentUser.then( user => {
+        this.uid = user.uid
+        console.log(this.uid);
+      })
+    }, 2000);
   }
 
   ngOnInit() {
@@ -54,11 +64,15 @@ export class UploadPage implements OnInit {
       idioma: form.idioma,
       nivel: form.nivel,
       editorial: form.editorial,
-      precio: form.precio
+      precio: form.precio,
+      uid: this.uid
     }
+    console.log(this.uid);
+    
 
     this.firesbaseService.createBook(data).then(  () => {
       this.newBookForm.reset();
+      
     }),
     error => {
       console.log(error)
