@@ -2,35 +2,34 @@
   <ion-toolbar>
     <div class="textIS">
       <ion-title>Iniciar Sesión</ion-title><br>
-      <ion-text>¿No tienes cuenta? <a routerLink="/register" routerLinkActive="router-link-active">Registrate</a> </ion-text>
+      <ion-text>¿No tienes cuenta? <a routerLink="/register" routerLinkActive="router-link-active">Registrate</a>
+      </ion-text>
     </div>
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
-  <div class="contentIS">
-    <br>
-    <form [formGroup]="newLoginForm" (ngSubmit)="validateLogin(form)">
-      <ion-item lines="none">
-        <ion-label position="floating">Correo electrónico</ion-label>
-        <ion-input type="text" formControlName="correo" placeholder="Correo" required></ion-input>
-        <small *ngIf="newLoginForm.get('correo').errors?.required && triedLogin">Ingrese un correo electrónico</small>
-        <small *ngIf="newLoginForm.get('correo').errors?.email && triedLogin">Ingrese un correo electrónico
-          válido</small>
-      </ion-item>
+<ion-content class="pageWhite">
+  <br>
+  <form [formGroup]="newLoginForm" (ngSubmit)="validateLogin(form)">
+    <ion-item lines="none">
+      <ion-label position="floating">Correo electrónico</ion-label>
+      <ion-input type="text" formControlName="correo" placeholder="Correo" required></ion-input>
+      <small *ngIf="newLoginForm.get('correo').errors?.required && triedLogin">Ingrese un correo electrónico</small>
+      <small *ngIf="newLoginForm.get('correo').errors?.email && triedLogin">Ingrese un correo electrónico
+        válido</small>
+    </ion-item>
 
-      <ion-item lines="none">
-        <ion-label position="floating">Contraseña</ion-label>
-        <ion-input type="password" formControlName="password" placeholder="Contraseña" required></ion-input>
-        <small *ngIf="newLoginForm.get('password').errors?.required && triedLogin">Ingrese una contraseña</small>
-        <small *ngIf="newLoginForm.get('password').errors?.minlength && triedLogin">Minimo 6 digitos</small>
-      </ion-item>
-      
-      <ion-row>
-        <ion-col>
-          <ion-button type="submit" color="danger">Iniciar Sesión</ion-button>
-        </ion-col>
-      </ion-row>
-    </form>
-  </div>
+    <ion-item lines="none">
+      <ion-label position="floating">Contraseña</ion-label>
+      <ion-input type="password" formControlName="password" placeholder="Contraseña" required></ion-input>
+      <small *ngIf="newLoginForm.get('password').errors?.required && triedLogin">Ingrese una contraseña</small>
+      <small *ngIf="newLoginForm.get('password').errors?.minlength && triedLogin">Minimo 6 digitos</small>
+    </ion-item>
+
+    <ion-row>
+      <ion-col>
+        <ion-button type="submit" color="danger">Iniciar Sesión</ion-button>
+      </ion-col>
+    </ion-row>
+  </form>
 </ion-content>

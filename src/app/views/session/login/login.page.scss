@@ -16,11 +16,7 @@ ion-input{
 }
 
 /******/
-.contentIS{
-    background-color: white !important;
-}
-
-.contentIS, .containerCol {
+.pageWhite, .containerCol {
     height: 100%;
     width: 100%;
 }
@@ -33,11 +29,11 @@ ion-input{
     width: 100%;
 }
 
-.contentIS .containerCol img {
+.pageWhite .containerCol img {
     width: 60%;
 }
 
-.contentIS .containerCol h1 {
+.pageWhite .containerCol h1 {
     text-align: center;
     margin: 50px;
 }

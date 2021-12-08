@@ -1,7 +1,6 @@
 .textUpload{
-    padding: 43px;
+    padding: 45px;
     text-align: center;
-    font-size: 17px;
 }
 
 ion-label{
@@ -29,17 +28,15 @@ ion-input,ion-textarea{
 }
 
 ion-select{
-    
     border-bottom: 1px solid rgba(192, 192, 192, 0.507);
 }
 
 /******/
-.contentUpload{
-    background-color: white !important;
-    padding: 15px;
+.pageWhite form{
+    margin: 10px;
 }
 
-.contentUpload, .containerCol {
+.pageWhite, .containerCol {
     height: 100%;
     width: 100%;
 }
@@ -52,11 +49,11 @@ ion-select{
     width: 100%;
 }
 
-.contentUpload .containerCol img {
+.pageWhite .containerCol img {
     width: 60%;
 }
 
-.contentUpload .containerCol h1 {
+.pageWhite .containerCol h1 {
     text-align: center;
     margin: 50px;
 }
