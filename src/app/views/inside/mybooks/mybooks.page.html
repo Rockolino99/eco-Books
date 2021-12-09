@@ -25,7 +25,7 @@
         </div>
       </ion-card>
       <center>
-        <div routerLink="/master/MasterPage/books/{{book.id}}"><ion-button type="submit" color="danger">Información</ion-button></div>
+        <div (click)="deleteBook(book.id)"><ion-button type="submit" color="danger">Eliminar</ion-button></div>
       </center>
     </ion-col>
     

@@ -32,19 +32,14 @@ export class FirebaseService {
       return res.where('uid','==',uid)
     }).snapshotChanges();
   }
-/*
-  public getDogs() {
-    return this.firestore.collection('dogs').snapshotChanges();
-  }
-
+  /*
   public updateDog(documentID: string, data: any) {
     return this.firestore.collection('dogs').doc(documentID).set(data);
   }
-
-  public deleteDog(documentID: string) {
-    return this.firestore.collection('dogs').doc(documentID).delete();
-  }
   */
+  public deleteBook(documentID: string) {
+    return this.firestore.collection('books').doc(documentID).delete();
+  }
 
   //Users
   public createUser(data: {uid: string, nombre: string, celular: Number, email: string}) {
