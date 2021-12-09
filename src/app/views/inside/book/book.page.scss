@@ -1,18 +1,22 @@
 @import url('https://fonts.googleapis.com/css?family=Montserrat:400,600,700');
 @import url('https://fonts.googleapis.com/css?family=Catamaran:400,800');
 .nombre{
-    font-size: 25px;
+    font-size: 6vw;
     font-weight: 800;
     color: midnightblue;
+    text-align: center;
 }
 .vendedor{
-    font-size: 16px;
+    font-size: 4vw;
     font-weight: 800;
 }
 .titulo{
-    font-size: 25px;
+    font-size: 8vw;
     font-family: 'Catamaran', sans-serif;
     font-weight: 800;
     color: #40464b;
     text-align: center;
+}
+p{
+    font-size: 4vw;
 }
