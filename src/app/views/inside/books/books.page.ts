@@ -20,7 +20,7 @@ export class BooksPage implements OnInit {
   ngOnInit() {
 
     this.titulo = "Libros disponibles"
-    //apartir de aqui?
+    
     const idioma = this.route.snapshot.paramMap.get('idioma');
     
     if(idioma == null) {//Todos los libros

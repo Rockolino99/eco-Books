@@ -29,11 +29,6 @@ export class BookPage implements OnInit {
       })
     })
 
-    /*this.firebase.getBook(bookIdioma).subscribe(bookSnapshot => {
-      this.book = bookSnapshot.payload.data()
-    })*/
-
-
   }
 
 }

@@ -31,7 +31,6 @@ export class MybooksPage implements OnInit {
           data: bookData.payload.doc.data()
         })
       })
-      console.log(this.books)
     })
   }
 

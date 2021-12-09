@@ -41,7 +41,6 @@ export class UploadPage implements OnInit {
     setTimeout(() => {
       this.auth.auth.currentUser.then( user => {
         this.uid = user.uid
-        console.log(this.uid);
       })
     }, 2000);
   }
