@@ -22,8 +22,8 @@ export class LoginPage implements OnInit {
 
   ngOnInit() {
     this.newLoginForm.setValue({
-      correo: "juanito@gmail.com",
-      password: "juanito"
+      correo: "",
+      password: ""
     })
   }
 
