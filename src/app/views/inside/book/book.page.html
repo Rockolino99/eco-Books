@@ -4,35 +4,35 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
-  
-<ion-card *ngIf="book">
-  <ion-card-header class="nombre">
-    {{book['nombre']}} - {{book['idioma']}} - ${{book['precio']}}
-  </ion-card-header>
-  <ion-card-content>
-    <p>Nivel: {{book['nivel']}}</p>
-    <p>Estado: {{book['estado']}}</p>
-    <p>Editorial: {{book['editorial']}}</p>
-    <p>Descripcion: {{book['descripcion']}}</p>
-    <!-- <p>Name : {{ speaker.name }}</p>
-    <p>Email : {{ speaker.email }}</p>
-    <p>Location : {{ speaker.location }}</p> -->
-  </ion-card-content>
-</ion-card>
+<ion-content class="pageWhite">
 
-<ion-card *ngIf="vendedor">
-  <ion-card-header class="vendedor">
-    Datos del vendedor
-  </ion-card-header>
-  <ion-card-content>
-    <p>Nombre: {{vendedor['nombre']}}</p>
-    <p>Correo: {{vendedor['email']}}</p>
-    <p>Celular: {{vendedor['celular']}}</p>
-    <!-- <p>Name : {{ speaker.name }}</p>
+  <ion-card *ngIf="book">
+    <ion-card-header class="nombre">
+      {{book['nombre']}} - {{book['idioma']}} - ${{book['precio']}}
+    </ion-card-header>
+    <ion-card-content>
+      <p>Nivel: {{book['nivel']}}</p>
+      <p>Estado: {{book['estado']}}</p>
+      <p>Editorial: {{book['editorial']}}</p>
+      <p>Descripcion: {{book['descripcion']}}</p>
+      <!-- <p>Name : {{ speaker.name }}</p>
     <p>Email : {{ speaker.email }}</p>
     <p>Location : {{ speaker.location }}</p> -->
-  </ion-card-content>
-</ion-card>
-  
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card *ngIf="vendedor">
+    <ion-card-header class="vendedor">
+      Datos del vendedor
+    </ion-card-header>
+    <ion-card-content>
+      <p>Nombre: {{vendedor['nombre']}}</p>
+      <p>Correo: {{vendedor['email']}}</p>
+      <p>Celular: {{vendedor['celular']}}</p>
+      <!-- <p>Name : {{ speaker.name }}</p>
+    <p>Email : {{ speaker.email }}</p>
+    <p>Location : {{ speaker.location }}</p> -->
+    </ion-card-content>
+  </ion-card>
+
 </ion-content>
